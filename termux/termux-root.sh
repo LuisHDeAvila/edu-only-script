@@ -1,7 +1,11 @@
 #!/bin/bash
-# author: eleache
-# description: run this command for demonize your termux app, for android users.
-  # termux settings
+: '
+  Title: termux-root
+  Author: eleAche
+  Description: This script configure your termux app to termux root app.
+  You can install distros into termux like to debian, with repositories of kali linux.
+  is an example...
+'
 termux-setup-storage;
 echo '    HI !!! ';
 echo 'type Y on everything';
@@ -21,7 +25,7 @@ echo 'shopt -s cdspell' >> .bashrc;
 mkdir $HOME/.termux/ ;echo "extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]" >> $HOME/.termux/termux.properties && termux-reload-settings;
   # setting
 touch ~/.hushlogin;
-  # elemental for pentesting
+  # for pentesting
 pkg i p7zip;
 pkg i clang;
 pkg i ffmpeg;
@@ -35,6 +39,10 @@ pkg i ffmpeg python && pip install -U youtube_dl;
   # TERMUX API
 pkg install proot-distro;
 proot-distro install debian;
-echo 'yeah! vas a iniciar sesion en debian linux' && sleep 4;
-echo 'Aqui termina la ayuda de eleAche, consulta el archivo, debian-termux para explotar al maximo tu nuevo sistema'
-proot-distro login debian;
+# excellent 
+clear
+echo '   welcome to linux!!' && sleep 4s;
+echo 'please into debian distro execute the script termux-debian'
+echo -e "\n\n\n\t PRESS [ENTER] TO BOOT DEBIAN DISTRO"
+read STARTUP_DEBIAN;
+sleep 2s && proot-distro login debian;
